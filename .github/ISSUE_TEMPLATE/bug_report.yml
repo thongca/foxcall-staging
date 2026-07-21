@@ -1,0 +1,93 @@
+name: FoxCall staging bug
+description: Report a reproducible problem from a FoxCall staging build
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Do not paste phone numbers, contacts, messages, tokens, recordings, or raw device identifiers. Attach the ZIP produced by FoxCall > Settings > About > Report a problem.
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+      description: What went wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Exact reproduction steps
+      placeholder: |
+        1. Open Calls
+        2. Enter a number
+        3. Click Call repeatedly
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual result
+    validations:
+      required: true
+  - type: input
+    id: occurred_at
+    attributes:
+      label: Occurrence time and timezone
+      placeholder: "2026-07-21 15:30 UTC+7"
+    validations:
+      required: true
+  - type: input
+    id: foxcall_version
+    attributes:
+      label: FoxCall version
+    validations:
+      required: true
+  - type: input
+    id: windows_version
+    attributes:
+      label: Windows version and build
+    validations:
+      required: true
+  - type: input
+    id: phone_model
+    attributes:
+      label: Phone model
+    validations:
+      required: true
+  - type: dropdown
+    id: bluetooth_visible
+    attributes:
+      label: Did Windows still show Bluetooth as connected?
+      options:
+        - "Yes"
+        - "No"
+        - "Unknown"
+    validations:
+      required: true
+  - type: input
+    id: diagnostic_id
+    attributes:
+      label: Diagnostic ID
+      description: FoxCall copies this value when it creates the ZIP.
+    validations:
+      required: true
+  - type: checkboxes
+    id: attachment
+    attributes:
+      label: Diagnostic attachment
+      options:
+        - label: I attached the FoxCall diagnostic ZIP and checked it contains no information I do not want to share.
+          required: true
+  - type: textarea
+    id: media
+    attributes:
+      label: Screenshots or screen recording
+      description: Optional. Remove private information before attaching.
